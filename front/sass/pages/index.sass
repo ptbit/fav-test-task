@@ -1,0 +1,235 @@
+$blue: #005
+$white: #ffffff
+$grey: #EDEDED
+$magenta: #FF267E
+$green: #05C48A
+$black: #1B1B1F
+
+$font-suisse-intl-reg: SuisseIntl-Regular, sans-serif
+$font-suisse-intl-medium: SuisseIntl-Medium, sans-serif
+$font-suisse-intl-semibold: SuisseIntl-SemiBold, sans-serif
+
+$font-legal: DINPro-CondLight, sans-serif
+
+body
+  overscroll-behavior: none
+  img
+    max-width: 100%
+    height: auto
+.main-link
+  position: fixed
+  width: 100%
+  height: 100%
+.land
+  height: calc(100% - 83px)
+  position: relative
+  overflow: hidden
+  z-index: 10
+  pointer-events: none
+  background: url('../img/bg-desk.jpg') no-repeat 60% 0/cover
+  @media screen and (min-width: 600px) and (orientation: landscape) and (min-height: 501px)
+    background: url('../img/bg-desk.jpg') no-repeat 60% 0/cover 
+  @media screen and (min-width: 601px) and (max-width: 1300px) and (orientation: portrait)
+    background: url('../img/bg-tab.jpg') no-repeat 50% 0/cover 
+  @media screen and (max-width: 600px) and (orientation: portrait)
+    background: url("../img/bg-mob.jpeg") no-repeat 50% 0%/cover
+  @media (max-width: 950px) and (max-height: 700px) and (orientation: landscape)
+    background: url("../img/bg-landscape.jpg") no-repeat 100% 100%/cover
+
+  &::before
+    content: ""
+    width: 66%
+    height: 100%
+    position: absolute
+    background: linear-gradient(270deg, rgba(14, 15, 12, 0.00) 0%, rgba(14, 15, 12, 0.60) 53.96%)
+  
+
+  &__container
+    display: flex
+    flex-direction: column
+    justify-content: center
+    align-items: center
+    position: relative
+    width: fit-content 
+    margin-left: 73px
+    height: 100%
+    color: $grey
+    font-size: 66px
+    text-transform: uppercase
+    font-weight: 500
+
+  &__logo
+    max-width: 514px
+    display: flex
+    flex-direction: column
+    gap: 20px
+    &-title
+      font-size: 49px
+      font-weight: 500 
+      letter-spacing: 0.49px
+      font-family: $font-suisse-intl-medium
+
+  &__title
+    margin-top: 100px
+    text-shadow: 0px 1.388px 0px #000
+    line-height: 38px
+    letter-spacing: 0.66px
+    font-family: $font-suisse-intl-medium
+ 
+  &__bonus-container
+    display: flex
+    width: 100%
+    min-width: 840px
+    margin-top: 30px
+    position: relative
+
+  &__price
+    padding: 20px 10px 10px
+    width: 50%
+    background-color: $blue
+    color: $grey
+    text-align: center
+    font-style: normal
+    font-weight: 500
+    letter-spacing: 2.64px
+    text-wrap: nowrap
+    text-transform: uppercase
+    font-family: $font-suisse-intl-medium
+    &::before
+      content: "до"
+      margin-right: 5px
+      color: $grey
+      font-size: 26px
+      font-style: normal
+      font-weight: 500
+      line-height: normal
+      letter-spacing: 1.04px
+      text-transform: uppercase
+      font-family: $font-suisse-intl-medium
+
+  &__plus
+    width: 47px
+    height: 41px
+    background-image: url("../img/plus.png")
+    background-size: contain
+    background-repeat: no-repeat
+    background-position: center
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+
+  &__spins
+    padding: 20px 10px 10px
+    width: 50%
+    background-color: #FF267E
+    color: $grey
+    text-align: center
+    font-style: normal
+    font-weight: 500
+    letter-spacing: 2.64px
+    text-transform: uppercase
+    font-family: $font-suisse-intl-medium
+  &__btn
+    pointer-events: initial
+    margin-top: 70px
+    border-radius: 4px
+    background: $green
+    border: none
+    display: flex
+    width: 390px
+    padding: 29px 74px
+    justify-content: center
+    align-items: center
+    gap: 10px
+    color: #005
+    text-align: center
+    font-family: $font-suisse-intl-semibold
+    font-size: 24px
+    font-style: normal
+    font-weight: 600
+    line-height: normal
+    letter-spacing: 1.92px
+    text-transform: uppercase
+    cursor: pointer
+    transition: background-color .3s ease
+
+    &:hover
+      background: #37d0a1
+
+  &__text
+    position: absolute
+    bottom: 18px
+    left: 35px
+    max-width: 716px
+    font-family: $font-suisse-intl-reg
+    font-size: 14px
+    line-height: 22px
+    text-shadow: 0px 1px 2px rgba(0, 0, 0, 0.25)
+    color: white
+
+  &__link
+    text-decoration-line: underline
+    color: white
+
+  /////
+
+.footer
+  background: $blue
+  height: 83px
+  display: flex
+  padding: 5px 20px 5px 35px
+  align-items: center
+  justify-content: space-between
+  &__wrap
+    display: flex
+    align-items: center
+  &__text
+    color: $white
+    font-family: $font-suisse-intl-reg
+    font-size: 14px
+    line-height: 22px
+    max-width: 975px
+    opacity: .8
+  &__licensed
+    display: flex
+    align-items: center
+    gap: 18px
+    margin: 0 35px 0 auto
+    flex-shrink: 0
+  &__btns
+    display: flex
+    align-items: center
+  &__appstore
+    pointer-events: initial
+    z-index: 99
+    display: block
+    background: url("../img/appleBtn.png") no-repeat 0 0/contain
+    width: 114px
+    height: 38px
+  &__googlePlay
+    pointer-events: initial
+    z-index: 99
+    display: block
+    background: url("../img/googleBtn.svg") no-repeat 0 0/contain
+    width: 128px
+    height: 38px
+    margin-left: 10px
+
+.legal
+  font-family: $font-legal
+  font-size: 4.7vw
+  padding: 0 15px
+  text-align: center
+
+
+
+////////////
+.line
+  opacity: 0.5
+  position: absolute
+  left: 50%
+  width: 1px
+  border-left: 1px dashed white
+  height: 100%
+  z-index: 999
