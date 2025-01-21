@@ -1,3 +1,4 @@
+//TDS
 (function () {
   var url = new URL(window.location.href);
   var params = ['l', 'utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'param1', 'param2', 'param3', 'param4', 'creative_type', 'creative_id'];
